@@ -1,0 +1,34 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        Problema 1 - Soma de Dois Números
+        Escreva um programa que receba dois números do usuário (usando prompt), some os dois e exiba o resultado no console.
+        */
+
+        let numberOne = parseFloat(prompt("write one number"));
+        let numberTwo = parseFloat(prompt("write other number"))
+
+        
+
+        if(isNaN(numberOne) || isNaN(numberTwo)) {
+            console.log("Please, write two valid numbers")
+        }else{
+            let sumResult = numberOne + numberTwo
+            console.log(`The sum is: ${sumResult} `)
+        }
+
+    </script>
+</body>
+</html>
