@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        Problema 4 - Verificar se um número é divisível por 3 e 5
+        Escreva um programa que receba um número do usuário e determine se ele é divisível tanto por 3 quanto por 5.
+        Exiba a mensagem correspondente no console.
+
+        Exemplo de Saída:
+
+        Entrada: 15 -> Saída: "15 is divisible by both 3 and 5"
+        Entrada: 9 -> Saída: "9 is divisible by 3"
+        Entrada: 10 -> Saída: "10 is divisible by 5"
+        Entrada: 7 -> Saída: "7 is not divisible by 3 or 5"
+        */
+
+        let promptNumber = parseFloat(prompt(`Enter with a valid number.`));
+
+        if(isNaN(promptNumber)) {
+            console.log(`Please, write a valid number.`);
+        }else if(promptNumber % 3 === 0 && promptNumber % 5 === 0) {
+            console.log(`${promptNumber} is divisible by both 3 and 5.`);
+        }else if(promptNumber % 3 === 0) {
+            console.log(`${promptNumber} is divisible by 3.`);
+        }else if(promptNumber % 5 === 0) {
+            console.log(`${promptNumber} is divisible by 5.`);
+        }else {
+            console.log(`${promptNumber} is not divisible by 3 and 5.`);
+        }
+
+    </script>
+
+</body>
+</html>

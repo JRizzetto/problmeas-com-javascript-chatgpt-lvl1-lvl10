@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            Problema 3 - Verificar se um número é par ou ímpar
+            Escreva um programa que receba um número do usuário e determine se ele é par ou ímpar.
+            Exiba a mensagem correspondente no console.
+
+            Exemplo de Saída:
+
+            Entrada: 4 -> Saída: "4 is even"
+            Entrada: 7 -> Saída: "7 is odd"
+        */
+
+        let numberOne = parseFloat(prompt('Please, write a number.'));
+
+        if(isNaN(numberOne)) {
+            console.log(`Please, enter a valid number.`);
+        }else if(numberOne % 2 === 0) {
+            console.log(`${numberOne} is even.`);
+        }else {
+            console.log(`${numberOne} is odd.`);
+        }
+
+    </script>
+    
+</body>
+</html>
