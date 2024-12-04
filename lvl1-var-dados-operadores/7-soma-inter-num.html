@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Problema 7 - Somar Números em uma Faixa
+        Escreva um programa que receba dois números inteiros do usuário: 
+        um número inicial e um número final.
+
+        O programa deve calcular a soma de todos os números inteiros no intervalo entre esses dois números (inclusive).
+
+        Exemplo de Saída:
+        Entrada: 1, 5 → Saída: "The sum of numbers between 1 and 5 is 15"
+        Entrada: 3, 3 → Saída: "The sum of numbers between 3 and 3 is 3"
+        Entrada: 5, 1 → Saída: "The sum of numbers between 1 and 5 is 15"
+
+        💡 Dica:
+        Garanta que o número inicial seja sempre menor que o final, independentemente da ordem digitada.
+        Use um loop para calcular a soma dos números no intervalo.
+        */
+
+        function sumGapNumbers(initialNumber, endNumber) {
+
+            initialNumber = parseFloat(prompt('Enter with the initial number.'));
+            endNumber = parseFloat(prompt('Enter with the end number'))
+
+            if(isNaN(initialNumber) || isNaN(endNumber)) {
+                alert("WARNING! Please, write a valid number");
+                return
+            }
+
+            if(initialNumber > endNumber) {
+                let temp = initialNumber;
+                initialNumber = endNumber;
+                endNumber = temp;
+            }
+
+            let counterNumber = 0;
+
+            for(let i = initialNumber; i <= endNumber; i++){
+                counterNumber += i;
+            }
+
+            return console.log(`The sum of the values between ${initialNumber} and ${endNumber} is ${counterNumber}`);
+        }
+
+        sumGapNumbers()
+
+    </script>
+</body>
+</html>
