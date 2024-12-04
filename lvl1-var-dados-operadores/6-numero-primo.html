@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Problema 6 - Verificar se um número é primo
+        Escreva um programa que receba um número do usuário e determine se ele é um número primo.
+
+        Requisitos:
+        Um número é considerado primo se ele for maior que 1 e não for divisível por nenhum outro número, exceto 1 e ele mesmo.
+        Exiba a mensagem correspondente no console.
+        
+        Exemplo de Saída:
+
+        Entrada: 7 -> Saída: "7 is a prime number"
+        Entrada: 10 -> Saída: "10 is not a prime number"
+        */
+
+        function numeroPrimo(number) {
+            number = parseFloat(prompt('Enter with a number'));
+
+            if(isNaN(number) || number <= 1) {
+                alert('Please, enter with valid numbers.');
+                return
+            }   
+
+            if(number == 2) {
+                console.log(`${number} is a prime number`);
+                return
+            }
+
+            for(let i = 2; i < number; i++){
+                if(number % i == 0){
+                    console.log(`${number} não é número primo`)
+                    return;
+                }
+            }
+
+            console.log(`${number} is a prime number`)
+
+        }
+
+        numeroPrimo()
+        
+
+    </script>
+
+</body>
+</html>

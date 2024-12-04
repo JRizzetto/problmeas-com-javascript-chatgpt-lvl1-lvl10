@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*
+            Problema 5 - Encontrar o maior entre três números
+            Escreva um programa que receba três números do usuário e determine qual deles é o maior.
+            Exiba a mensagem correspondente no console.
+
+            Exemplo de Saída:
+
+            Entrada: 5, 10, 7 -> Saída: "10 is the largest number"
+            Entrada: 12, 8, 12 -> Saída: "12 is the largest number"
+            Entrada: 3, 3, 3 -> Saída: "All numbers are equal"
+            💡 Dica: Use as estruturas condicionais para comparar os números e tratar os casos onde todos os números são iguais.
+
+            Boa sorte! 🚀
+        */ 
+
+        function maiorDeTres(a, b, c) {
+            a = parseFloat(prompt('enter with the first number.'));
+            b = parseFloat(prompt('enter with the second number.'));
+            c = parseFloat(prompt('enter with the third number.'));
+
+            if(isNaN(a) || isNaN(b) || isNaN(c)) {
+                console.log(`Please, write only numbers.`);
+                return
+            }
+
+            if(a == b && b == c){
+                console.log(`The numbers are equal`);
+            }else if(a > b && a > c) {
+                console.log(`The bigger number is ${a}.`);
+            }else if(b > a && b > c) {
+                console.log(`The bigger number is ${b}.`);
+            }else {
+                console.log(`The bigger number is ${c}.`);
+            }
+        }
+
+        maiorDeTres()
+
+    </script>
+</body>
+</html>
