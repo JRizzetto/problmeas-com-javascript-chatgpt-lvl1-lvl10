@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 15 - Inverter uma String
+
+        Crie uma função que receba uma string do usuário (usando prompt), inverta essa string e exiba o resultado no console.
+
+        Desafio:
+
+        Solicite ao usuário que digite uma palavra ou frase.
+        Inverta a string (todas as letras da frase, não apenas a palavra).
+        Exiba o resultado no console.
+        Fique à vontade para resolver e me enviar o código!
+        */
+
+        function reverseString(input) {
+            input = prompt("Enter a word!");
+
+            if(!isNaN(input)){
+                return console.log("Please, enter only words, not numbers!")
+            }
+
+            let inverseWord = input.split('').reverse().join('');
+
+            return console.log(inverseWord);
+        }
+
+        reverseString()
+    </script>
+    
+</body>
+</html>

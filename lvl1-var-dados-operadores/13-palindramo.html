@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 13 (novo):
+        Crie uma função que receba uma string e verifique se ela é um palíndromo.
+        Um palíndromo é uma palavra, frase ou número que pode ser lido da mesma forma de trás para frente 
+        (ignorando espaços e diferenças entre letras maiúsculas e minúsculas).
+
+        Exemplo:
+        Entrada: "arara" → Saída: true
+        Entrada: "A man a plan a canal Panama" → Saída: true
+        Entrada: "hello" → Saída: false
+        Dicas:
+        Remova os espaços e normalize as letras (por exemplo, para minúsculas) antes de verificar.
+        Compare a string original processada com a sua versão invertida.
+        */
+
+        function palindramoFunc(name = "") {
+            let input = prompt("Enter a any name")
+            
+            let compareInput = input.toLocaleLowerCase().replace(/\s+/g, '');
+            let reverInput = compareInput.split('').reverse().join('');
+
+            return console.log(compareInput === reverInput)
+        }
+
+        palindramoFunc()
+
+    </script>
+    
+</body>
+</html>

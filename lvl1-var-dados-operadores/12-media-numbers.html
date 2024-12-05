@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Problema 12 - Média de Números
+        Escreva um programa que receba uma lista de números do usuário (um por vez) até que ele insira o valor "0".
+        O programa deve calcular e exibir a média aritmética de todos os números inseridos, excluindo o "0".
+
+        Exemplo de Entrada e Saída
+        Entrada: 10, 20, 30, 0
+        Saída: "The average of the entered numbers is 20"
+        Dicas:
+        Use um loop para continuar pedindo números enquanto o valor não for 0.
+        Use uma variável para somar os números inseridos e outra para contar a quantidade de números.
+        Não esqueça de verificar se o usuário não insere apenas "0" na primeira entrada.
+        */
+
+            
+        function averageNumber(numberAccumulator = 0, count = 0) {
+            let inputNumber = parseFloat(prompt("Enter a number bigger 0 (enter 0 to stop):"));
+
+            if (inputNumber === 0) {
+                if(count === 0) {
+                    console.log("WARNING! Do you enter a number bigger 0?")
+                }else{
+                    let average = (numberAccumulator / count)
+                    console.log(`The averages of the entired numbers is ${average}`) 
+                }   
+                return
+            }
+
+            if(!isNaN(inputNumber)){
+                numberAccumulator += inputNumber;
+                count += 1;
+            }else{
+                console.log("WARNING! Enter a valid numbers, letters not permised")
+            }
+
+            averageNumber(numberAccumulator, count);
+        }
+
+        averageNumber();
+
+
+    </script>
+
+</body>
+</html>

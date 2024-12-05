@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Problema 14: Contagem de Vogais
+
+        Escreva uma função que receba uma string como parâmetro e conte quantas vogais (a, e, i, o, u) existem nessa string. 
+        A função deve retornar o número total de vogais encontradas.
+
+        Exemplo:
+
+        Entrada: "ChatGPT"
+        Saída: 2 (A e o são as vogais)
+        Tente resolvê-lo e me envie o código para correção!
+        */
+
+        function vowelsNumber(word = "") {
+            let input = prompt("Enter a any word")
+
+            let vowels = input.toLocaleLowerCase().match(/[aeiouáéíóúãõâêîôûàèìòù]/g);
+
+            if(vowels == null) {
+                return console.log("Sorry, there aren't vowels in this word!");
+            }
+            
+            return console.log(`Output: ${vowels.length} - Found: ${vowels.join(', ')} are vowels.`);
+        }
+
+        vowelsNumber()
+
+    </script>
+
+</body>
+</html>
