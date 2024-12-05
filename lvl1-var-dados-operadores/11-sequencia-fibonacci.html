@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 11 - Fibonacci
+
+        Escreva um programa que receba um número do usuário e calcule o valor correspondente à sequência de Fibonacci até aquele número.
+
+        O que é a sequência de Fibonacci?
+        A sequência de Fibonacci é uma série de números onde cada número é a soma dos dois anteriores, começando com 0 e 1. A sequência se parece com isso:
+
+        Copiar código
+        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+        Exemplo de saída:
+        Entrada: 5 → Saída: "The Fibonacci sequence up to 5 is: 0, 1, 1, 2, 3"
+        Entrada: 7 → Saída: "The Fibonacci sequence up to 7 is: 0, 1, 1, 2, 3, 5, 8"
+        Tarefa:
+        Implemente uma função que recebe um número e calcula os números da sequência de Fibonacci até esse número.
+
+        Vamos ver sua solução!
+        */
+
+        function fibonacciNumber(num) {
+
+            if(isNaN(num)) {
+                console.log("WRNING! Enter only numbers")
+                return
+            }            
+
+            let a = 0
+            let b = 1
+
+
+            let resultFibo = '0, 1, '
+
+            for(let i = 2; i < num; i++){
+                let nextNumber = a + b  
+                a = b;
+                b = nextNumber;       
+
+                resultFibo += `${nextNumber}, `
+            }
+
+            return resultFibo
+        }
+
+        const result = fibonacciNumber(9);
+        console.log(result);
+
+    </script>
+    
+</body>
+</html>

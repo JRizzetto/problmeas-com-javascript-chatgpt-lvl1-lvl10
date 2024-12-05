@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Problema 10 - Inverter um Número
+        Descrição:
+
+        Escreva uma função que receba um número inteiro e retorne esse número invertido.
+
+        Por exemplo:
+
+        Entrada: 12345 → Saída: 54321
+        Entrada: 6789 → Saída: 9876
+        Dicas:
+
+        Para resolver esse problema, você pode transformar o número em uma string, inverter a string e, então, transformá-la novamente em um número.
+        Tente resolver esse desafio e me envie o código para análise!
+        */
+
+        function invertNumber(integerNumber) {
+            integerNumber = prompt("Enter a line of numbers")
+
+            let reversenumber = parseFloat(integerNumber.split('').reverse().join(''));
+
+            return console.log(`${reversenumber} is the reverse number`);
+        }
+
+        invertNumber();
+
+    </script>
+
+</body>
+</html>

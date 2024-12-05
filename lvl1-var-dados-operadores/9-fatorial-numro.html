@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        Problema 9 - Fatorial de um Número
+        Descrição:
+        Escreva um programa que receba um número inteiro do usuário e calcule o fatorial desse número.
+
+        Requisitos:
+
+        O fatorial de um número n é o produto de todos os números inteiros positivos menores ou iguais a n.
+        Exemplo: 5! = 5 × 4 × 3 × 2 × 1 = 120.
+        Certifique-se de lidar com entradas inválidas.
+        Se o número for menor que 0, exiba uma mensagem dizendo que o fatorial não é definido para números negativos.
+        Exemplo de Saída:
+
+        Entrada: 5 → Saída: The factorial of 5 is 120.
+        Entrada: 0 → Saída: The factorial of 0 is 1.
+        Entrada: -3 → Saída: Factorial is not defined for negative numbers.
+        💡 Dica:
+        Você pode usar um loop for para calcular o fatorial ou, se quiser algo mais avançado, explorar recursividade.
+
+        */
+
+        // Looping for
+        function inputNumber(a){
+            a = parseFloat(prompt("WARNING! Please, enter just with numbers."));
+            
+            if(isNaN(a) || a <= 0) {
+                alert(`${a} is not a valid number, please, enter with a valid number.`);
+                return
+            }
+
+            let factorialNumber = 1;
+
+            for(let i = 1; i <= a; i++){
+                factorialNumber *= i;
+            }
+
+            return console.log(`The factorial of ${a} is ${factorialNumber}.`);
+        }
+
+        inputNumber();
+
+        // ----------------------------------------------------
+
+
+    </script>
+    
+        
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        Problema 8 - Contar Números Pares e Ímpares.
+        
+        Escreva um programa que receba dois números do usuário: 
+        Um número inicial e um número final.
+        O programa deve contar quantos números pares e ímpares existem no intervalo entre esses dois números (inclusive).
+
+        Exemplo de Saída:
+        Entrada: 1, 5 → Saída: "There are 2 even numbers and 3 odd numbers between 1 and 5."
+        Entrada: 2, 8 → Saída: "There are 4 even numbers and 3 odd numbers between 2 and 8."
+        Entrada: 5, 5 → Saída: "There are 0 even numbers and 1 odd number between 5 and 5."
+
+        💡 Dica:
+        Garanta que o número inicial seja sempre menor que o final. Use um loop para verificar a paridade (par/ímpar) de cada número.
+        */
+
+        function counterNumbers(initialNumber, endNumber) {
+            initialNumber = parseFloat(prompt("Enter with the first Number."));
+            endNumber = parseFloat(prompt("Enter with the second Number."));
+
+            if(isNaN(initialNumber) || isNaN(endNumber)) {
+                alert("Prease, write a valid number")
+                return
+            }
+
+            if(initialNumber > endNumber) {
+                let adjustment = initialNumber;
+                initialNumber = endNumber;
+                endNumber = adjustment;
+            }
+
+            let evenNumber = 0
+            let oddNumber = 0
+
+            for(let i = initialNumber; i <= endNumber; i++){
+                if(i % 2 == 0){
+                    evenNumber += 1;
+                }else{
+                    oddNumber +=1
+                }
+            }
+
+            return console.log(`There are ${evenNumber} even numbers and ${oddNumber} odd numbers between ${initialNumber} and ${endNumber}.`);
+        }
+
+        counterNumbers();
+
+    </script>
+    
+</body>
+</html>
