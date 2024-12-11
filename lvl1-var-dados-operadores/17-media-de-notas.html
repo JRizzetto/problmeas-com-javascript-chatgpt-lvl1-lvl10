@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 17 - Calculadora de Média de Notas
+
+        Escreva uma função que receba um array de notas (números) e calcule a média dessas notas. 
+        Depois, se a média for maior ou igual a 7, retorne "Aprovado". Se for menor que 7, retorne "Reprovado".
+
+        Desafio:
+
+        A função deve verificar se o array está vazio e retornar uma mensagem de erro caso esteja.
+        A média deve ser calculada de forma dinâmica (sem utilizar valores fixos).
+        Você deve usar métodos de array, como .reduce(), para somar as notas.
+        Tente implementar a solução e me envie o código para correção!
+        */
+
+        function mediaNotas(grades = 0, count = 0) {
+            const input = parseFloat(prompt("Enter a school grade (Press 0 to end)."))
+            
+            let average = 0
+
+            if(input === 0){
+                if(count === 0){
+                    console.log("The grades is empty, please, enter a school's grade.")
+                }else{
+                    console.log(`The average's grade is ${(average = grades / count).toFixed(2)}`)
+
+                    if(average >= 7) {
+                        console.log(" You are Approved ")
+                    }else {
+                        console.log(" You are FAILED! ")
+                    }
+                    
+                    return 
+                }
+                return 
+            }
+
+            if(!isNaN(input)){
+                grades += input;
+                count += 1;
+            }else {
+                console.log("WARNING! Please, enter only numbers!")
+            }
+
+            mediaNotas(grades, count)
+        }
+
+        mediaNotas()
+
+    </script>
+    
+</body>
+</html>

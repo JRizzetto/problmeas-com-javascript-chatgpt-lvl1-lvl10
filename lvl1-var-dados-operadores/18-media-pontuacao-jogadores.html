@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 18 - Controle de Pontuação de Jogadores
+
+        Escreva um programa que registre a pontuação de jogadores em um jogo. 
+        O programa deve receber as pontuações através do prompt (uma por vez), armazená-las em um array e calcular a média de pontuação ao final. 
+        O programa deve parar de receber entradas quando o usuário digitar 0. Além disso:
+        Se nenhuma pontuação for registrada, exiba uma mensagem: "Nenhuma pontuação foi registrada."
+
+        Após calcular a média, exiba:
+
+        A pontuação mais alta.
+        A pontuação mais baixa.
+
+        Se a média for superior a 100, exiba a mensagem: "Parabéns! Média acima de 100."
+        Caso contrário, exiba: "Média abaixo de 100. Continue praticando!"
+        */
+
+
+        function playerScores(score = [], count = 0, biggerScore = 0, smallerScore = 100) {
+            const scoreInput = parseFloat(prompt("Enter a number."));
+
+            if(isNaN(scoreInput)){
+                console.log("Enter just numbers!")
+                return 
+            }else {
+                if(scoreInput === 0) {
+                    if(count === 0) {
+                        console.log("Neither registration score.");
+                        return 
+                    }else {
+                        let soma = score.reduce((ac, va) => ac + va, 0);
+                        let average = (soma / count);
+                        console.log(`The average's score is ${average}.\n The bigger socre is ${biggerScore}.\n The smaller score is ${smallerScore}`);
+    
+                        if((average) >= 100){
+                            console.log("Congratilation! Your average is bigger than 100!");
+                        }else {
+                            console.log("Average is smaller than 100, keep practice!");
+                        }
+                    }
+
+                    return
+                }
+
+                if(scoreInput > biggerScore){
+                        biggerScore = scoreInput;
+                }
+
+                if(scoreInput < smallerScore){
+                        smallerScore = scoreInput;
+                }
+    
+                if(!isNaN(scoreInput)) {
+                    score.push(scoreInput);
+                    count += 1;
+                }
+            }
+
+
+            playerScores(score, count, biggerScore, smallerScore)
+        }
+
+        playerScores()
+
+        
+
+    </script>
+    
+</body>
+</html>

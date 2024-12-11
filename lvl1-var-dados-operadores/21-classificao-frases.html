@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Problema 21: Classificação de Frases
+        Descrição: Crie uma função que receba frases do usuário e, ao final, exiba:
+
+        A frase mais longa (em número de caracteres, incluindo espaços).
+        A frase mais curta (em número de caracteres, incluindo espaços).
+        A quantidade total de caracteres em todas as frases combinadas.
+        A quantidade de frases inseridas.
+        Regras:
+
+        O programa deve terminar quando o usuário inserir a palavra-chave "DONE".
+        Se nenhuma frase for inserida antes de "DONE", exiba uma mensagem informando que nenhuma entrada foi registrada.
+        Valide entradas vazias e peça para o usuário tentar novamente.
+        */ 
+
+        function phrasesClassification() {
+            let longestPhrase = ""; 
+            let smallesPhrase = "";
+            let totalCharacter = 0;
+            let totalPhrases = [];
+
+            while(true){
+                let inputPhrase = prompt("Enter a phrase!")
+
+                if(inputPhrase.trim() === "") {
+                    console.log("Empty input, write any prhase")
+                    continue
+                }
+
+                if(inputPhrase === null){
+                    console.log("Input was canceled")
+                    return 
+                }
+
+                if(inputPhrase === "DONE"){
+                if(totalPhrases.length === 0){
+                    console.log("Please, enter a one phrase!");
+                }else {
+                    console.log(`The bigger phrase is ${longestPhrase}`);
+                    console.log(`The smaller phrase is ${smallesPhrase}`);
+                    console.log(`The total character is ${totalCharacter}`);
+                    console.log(`The total phrases is ${totalPhrases.length}`);
+
+                }
+                return 
+            }
+
+            if(inputPhrase.length > longestPhrase.length){
+                longestPhrase = inputPhrase
+            }
+            
+            if (smallesPhrase === "" || inputPhrase.length < smallesPhrase.length){
+                smallesPhrase = inputPhrase
+            }
+
+            totalCharacter += inputPhrase.length;
+            totalPhrases.push(inputPhrase)
+            }
+        }
+
+        phrasesClassification()
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

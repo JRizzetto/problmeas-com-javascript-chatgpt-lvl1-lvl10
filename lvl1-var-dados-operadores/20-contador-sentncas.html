@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 20: Análise de Sentenças
+        Descrição:
+
+        Crie uma função que receba várias sentenças inseridas pelo usuário. Ao final, a função deve exibir:
+
+        O número total de sentenças digitadas.
+        A sentença mais curta (a menor em número de caracteres, desconsiderando espaços).
+        A média de palavras por sentença.
+
+        O programa deve terminar quando o usuário digitar "STOP". 
+        Caso nenhuma sentença seja digitada antes de "STOP", exiba uma mensagem indicando que não houve entradas.
+        
+        - Exemplo de Funcionamento:
+        O programa pede para o usuário inserir uma sentença:
+        Entrada: "JavaScript is versatile!"
+        O programa pede mais sentenças:
+        Entrada: "I love coding."
+        O programa continua pedindo:
+        Entrada: "STOP"
+
+        Resultado:
+
+        Total of sentences: 2
+        Shortest sentence: "I love coding."
+        Average words per sentence: 3.5
+        */
+
+
+        function sentceNumber() {
+                let totalSentence = [];
+                let shortSentence = "";
+                let averageSentence = 0;
+                let countSentence = Infinity;
+
+
+                while(true) {
+                    const inputWord = prompt("Enter with a sentence.");
+
+                    if(inputWord.trim() === "STOP"){
+                        if(totalSentence.length === 0){
+                            console.log("No sentences were entered");
+                            return;
+                        }
+                        break;
+                    }
+
+                    if(inputWord.trim() === ""){
+                        console.log("Empty input, please try again.");
+                        continue;
+                    }
+
+                    totalSentence.push(inputWord);
+
+                    let short = inputWord.replace(/\s+/g, "")
+                    if(short.length < countSentence){
+                        shortSentence = inputWord;
+                        countSentence = short.length
+                    }
+
+                    let average = inputWord.trim().split(/\s+/)
+                    averageSentence += average.length;
+            }
+
+                console.log(`The sentence total write is ${totalSentence.length}`);
+                console.log(`The short sentence is ${shortSentence}`)
+                console.log(`The average is ${averageSentence / totalSentence.length}`)
+        }
+
+        sentceNumber()
+
+    </script>
+    
+</body>
+</html>

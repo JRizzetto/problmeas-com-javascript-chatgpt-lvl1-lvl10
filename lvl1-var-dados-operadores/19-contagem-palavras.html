@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 19: Contagem de Palavras e Caracteres
+        Descrição: Crie uma função que receba várias frases inseridas pelo usuário e, ao final, exiba:
+
+        1 - A quantidade total de palavras digitadas.
+        2 - A quantidade total de caracteres (desconsiderando espaços em branco).
+        3 - A frase com o maior número de palavras.
+        
+        O programa deve terminar quando o usuário inserir a palavra "END". 
+        Caso nenhuma frase seja digitada antes de "END", mostre uma mensagem informando que nenhuma entrada foi registrada.
+        */
+
+        function countWordsAndCharacters() {
+            let totalWords = 0;
+            let totalCharacters = 0;
+            let longestPhrase = "";
+            let maxWordsInPhrase = 0;
+
+            while (true) {
+                const input = prompt("Enter a phrase (type 'END' to finish):");
+
+                if (input.trim() === "END") {
+                    if (totalWords === 0) {
+                        console.log("No phrases were entered.");
+                        return;
+                    }
+                    break;
+                }
+
+                // Remove espaços em branco no início/fim e verifica se é vazio
+                if (input.trim() === "") {
+                    console.log("Empty input, please try again.");
+                    continue;
+                }
+
+                // Dividir a frase em palavras e contar
+                const words = input.trim().split(/\s+/); // Dividir por um ou mais espaços
+                const numWords = words.length;
+                console.log(words)
+                console.log(numWords)
+
+                // Contar caracteres sem espaços
+                const numCharacters = input.replace(/\s+/g, "");
+                console.log(numCharacters)
+
+                // Atualizar totalizadores
+                totalWords += numWords;
+                totalCharacters += numCharacters;
+
+                // Verificar se é a frase com mais palavras
+                if (numWords > maxWordsInPhrase) {
+                    maxWordsInPhrase = numWords;
+                    longestPhrase = input;
+                }
+            }
+
+            // Exibir resultados
+            console.log(`Total of words: ${totalWords}`);
+            console.log(`Total of characters (without spaces): ${totalCharacters}`);
+            console.log(`Phrase with the most words: "${longestPhrase}"`);
+        }
+
+        countWordsAndCharacters()
+
+
+    </script>
+    
+</body>
+</html>

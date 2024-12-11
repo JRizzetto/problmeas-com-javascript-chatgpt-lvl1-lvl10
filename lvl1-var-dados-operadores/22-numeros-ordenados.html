@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 22: Ordenação e Filtragem de Números
+        Descrição:
+
+        Crie uma função que receba uma lista de números inseridos pelo usuário e faça o seguinte:
+
+        Exiba o maior e o menor número da lista.
+        Exiba a soma de todos os números.
+        Exiba a média dos números.
+        Exiba os números da lista ordenados em ordem crescente.
+        Filtre os números que são pares e exiba-os.
+
+        O programa deve continuar pedindo números até que o usuário digite "DONE". Se o usuário não inserir nenhum número antes de digitar "DONE", exiba uma mensagem informando que a lista está vazia.
+        */
+    
+        function orderNumbers(bigger = 0, smaller = Infinity, sum = 0, order = [], evenNumber = []) {
+            const inputNumber = prompt("Enter with a number");
+            let numberInput = parseFloat(inputNumber);
+
+            if(isNaN(inputNumber) && inputNumber != "DONE"){
+                console.log("Enter only numbers.");
+                return 
+            }
+
+            if(inputNumber === "DONE") {
+                if(order.length === 0) {
+                    console.log("Empty input, enter a valid number")
+                }else {
+                    console.log(`The bigger number is ${bigger}.`);
+                    console.log(`The smaller number is ${smaller}.`);
+                    console.log(`The sum all numbers is ${sum}.`);
+                    console.log(`The average is ${sum / order.length}.`);
+                    console.log(`The order list is ${order}.`);
+                    console.log(`The even numbers is ${evenNumber}`);
+                }
+                return 
+            }
+
+            if(numberInput > bigger){
+                bigger = numberInput
+            }
+
+            if(numberInput < smaller){
+                smaller = numberInput
+            }
+
+            if(numberInput % 2 === 0){
+                evenNumber.push(numberInput)
+            }
+
+            sum += numberInput;
+
+            order.push(numberInput);
+            order.sort((a, b) => a - b);
+            
+
+
+            orderNumbers(bigger, smaller, sum, order, evenNumber)
+        }
+
+        orderNumbers()
+
+    </script>
+    
+</body>
+</html>
