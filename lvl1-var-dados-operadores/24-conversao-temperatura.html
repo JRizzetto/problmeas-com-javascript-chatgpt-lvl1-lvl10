@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Problema 24: Conversão de Temperatura
+            Descrição: Crie uma função que converta uma temperatura dada em graus Celsius para Fahrenheit e Kelvin, e vice-versa. 
+            O programa deve pedir ao usuário para inserir um valor e escolher a unidade de origem (Celsius, Fahrenheit ou Kelvin). 
+            Em seguida, o programa deve exibir o valor convertido para as outras duas unidades.
+
+            O programa deve funcionar da seguinte maneira:
+
+            O usuário insere a temperatura e a unidade de origem.
+            O programa converte a temperatura para as duas outras unidades.
+            O programa exibe o valor convertido nas duas unidades.
+            Caso o valor de entrada não seja um número válido, deve ser mostrado um erro informando que a entrada está incorreta.
+        */
+
+        function conversionTemperature(input) {
+            input = parseFloat(prompt("Enter a temperature."));
+
+            if(isNaN(input)){
+                console.log("Please, enter a valid number!")
+                return
+            }
+
+            let returnInput = prompt("choice: A to Celsius; B to Fahrenheit; C to Kelvin").toLocaleLowerCase();
+
+            if(returnInput === "a") {
+                let fahrenheit = (input * (9/5) + 32);
+                let kelvin = (input + 273.15)
+                console.log(`Fahrenheit = ${fahrenheit.toFixed(2)}°F`)
+                console.log(`Kelvin = ${kelvin.toFixed(2)}K`)
+            }else if(returnInput === "b") {
+                let celsius = ((input - 32) * (5/9));
+                let kelvin = ((input - 32) * (5/9) + 273.15)
+                console.log(`Celsius = ${celsius.toFixed(2)}°C`)
+                console.log(`Kelvin = ${kelvin.toFixed(2)}K`)
+            }else if(returnInput === "c") {
+                let celsius = input - 273.15
+                let fahrenheit = ((input - 273.15) * (9/5) + 32)
+                console.log(`Celsius = ${celsius.toFixed(2)}°C`)
+                console.log(`Fahrenheit = ${fahrenheit.toFixed(2)}°F`)
+            }
+
+            return 
+        }
+
+        conversionTemperature()
+
+            
+    </script>
+</body>
+</html>

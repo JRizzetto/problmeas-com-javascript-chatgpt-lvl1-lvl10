@@ -23,14 +23,8 @@
         O programa deve continuar pedindo números até que o usuário digite "DONE". Se o usuário não inserir nenhum número antes de digitar "DONE", exiba uma mensagem informando que a lista está vazia.
         */
     
-        function orderNumbers(bigger = 0, smaller = Infinity, sum = 0, order = [], evenNumber = []) {
-            const inputNumber = prompt("Enter with a number");
-            let numberInput = parseFloat(inputNumber);
-
-            if(isNaN(inputNumber) && inputNumber != "DONE"){
-                console.log("Enter only numbers.");
-                return 
-            }
+        function orderNumbers(bigger = -Infinity, smaller = Infinity, sum = 0, order = [], evenNumber = []) {
+            const inputNumber = prompt("Enter with a number(type 'DONE' to finish)");
 
             if(inputNumber === "DONE") {
                 if(order.length === 0) {
@@ -40,10 +34,16 @@
                     console.log(`The smaller number is ${smaller}.`);
                     console.log(`The sum all numbers is ${sum}.`);
                     console.log(`The average is ${sum / order.length}.`);
-                    console.log(`The order list is ${order}.`);
-                    console.log(`The even numbers is ${evenNumber}`);
+                    console.log(`The order list is ${order.join(", ")}.`);
+                    console.log(`The even numbers is ${evenNumber.join(", ")}`);
                 }
                 return 
+            }
+
+            let numberInput = parseFloat(inputNumber);
+            if(isNaN(numberInput)) {
+                console.log("Please enter a valid number");
+                return orderNumbers(bigger, smaller, sum, order, evenNumber)
             }
 
             if(numberInput > bigger){
@@ -54,17 +54,16 @@
                 smaller = numberInput
             }
 
-            if(numberInput % 2 === 0){
-                evenNumber.push(numberInput)
-            }
-
             sum += numberInput;
 
             order.push(numberInput);
+
+            if(numberInput % 2 === 0){
+                evenNumber.push(numberInput)
+            }
+          
             order.sort((a, b) => a - b);
             
-
-
             orderNumbers(bigger, smaller, sum, order, evenNumber)
         }
 

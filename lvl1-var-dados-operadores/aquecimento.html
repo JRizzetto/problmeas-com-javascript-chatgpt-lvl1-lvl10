@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            Exercício 1: Somando Números
+            Crie uma função que receba dois números como parâmetros e retorne a soma deles.
+        */
+        function sumNumber(a, b) {
+            a = 5
+            b = 7
+
+            let sum = a + b;
+            return console.log(sum)
+        }
+        
+        sumNumber()
+
+        /*
+            Exercício 2: Verificando Par ou Ímpar
+            Crie uma função que receba um número como parâmetro e retorne se o número é "par" ou "ímpar".
+        */
+        function oddEven(oddEvenNumber) {
+            oddEvenNumber = 11
+
+            if(oddEvenNumber % 2 === 0) {
+                console.log("This number is EVEN")
+            }else {
+                console.log("This number is ODD")
+            }
+        }
+
+        oddEven()
+
+        /*
+            Exercício 3: Invertendo uma String
+            Crie uma função que receba uma string como parâmetro e retorne a string invertida.
+        */
+        function invertString(string) {
+            string = "Jefferson";
+            return string.split('').reverse().join('');
+        }
+            console.log(invertString());
+
+        /*
+            Exercício 4: Contando Caracteres
+            Crie uma função que receba uma string como parâmetro e retorne o número de caracteres dessa string.
+        */
+       function countcarac(name) {
+            name = "Olá Dev"
+
+            console.log(name.length)
+       }
+       countcarac()
+
+        /*
+            Exercício 5: Maior e Menor Número
+            Crie uma função que receba um array de números e retorne o maior e o menor número dessa lista.
+        */
+
+
+
+    </script>
+    
+</body>
+</html>

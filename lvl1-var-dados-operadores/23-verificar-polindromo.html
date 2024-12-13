@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Problema 23: Verificação de Palíndromo
+        Descrição: Crie uma função que receba uma string do usuário e verifique se ela é um palíndromo. 
+        Uma string é considerada um palíndromo se ela puder ser lida da mesma forma de trás para frente, desconsiderando espaços, pontuação e diferenças entre maiúsculas e minúsculas.
+
+        O programa deve:
+
+        Solicitar ao usuário uma string.
+        Remover espaços, pontuação e transformar todas as letras em minúsculas.
+        Verificar se a string é igual à sua versão invertida.
+        Exibir uma mensagem informando se a string é ou não um palíndromo.
+        */
+
+        function checkPolindrome(input = "") {
+            input = prompt("Enter a phrase to verify if is polidrome.");
+
+            if(input.trim() === ""){
+                console.log("Please, Enter a valid string!");
+                return;
+            }
+
+            let returnInput = input.replace(/[\p{P}\s]+/gu, '').toLowerCase();
+            let reverseInput = returnInput.split('').reverse().join('');
+
+            if(returnInput == reverseInput){
+                console.log("It's a polimoter.");
+            }else{
+                console.log("It's not a polimoter.");
+            }
+
+            return; 
+        }
+
+        checkPolindrome();
+
+    </script>
+    
+</body>
+</html>
